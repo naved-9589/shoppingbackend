@@ -3,7 +3,7 @@ const app = express();
 const cors = require('cors');
 const path = require("path")
 const fileUpload = require('express-fileupload');
-
+const port = process.env.PORT || 1000
 
 require("./database/conn");
 
@@ -20,6 +20,6 @@ app.use(express.json());
 
 app.use("/shop", require("./endpoints/endpoints"))
 
-app.listen("1000",()=>{
+app.listen(port,()=>{
    console.log("hello express")
 })
