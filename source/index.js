@@ -14,7 +14,7 @@ app.use(fileUpload());
 app.use("/shop", express.static(path.join(__dirname, 'uploads')));
 
 
-app.use("/shop", require("./endpoints/checkout"))
+app.use("/", require("./endpoints/checkout"))
 
 app.use(express.json());
 
