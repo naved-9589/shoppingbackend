@@ -9,7 +9,7 @@ require("./database/conn");
 
 app.use(cors({origin: "*"}));
 
-app.use(fileUpload());
+app.use(fileUpload()); 
 
 app.use("/shop", express.static(path.join(__dirname, 'uploads')));
 
