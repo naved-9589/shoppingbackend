@@ -5,7 +5,7 @@ const path = require("path")
 const fileUpload = require('express-fileupload');
 const port = process.env.PORT || 1000
 
-// require("./source/database/conn");
+require("./source/database/conn");
 
 app.use(cors({origin: "*"}));
 
