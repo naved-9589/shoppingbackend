@@ -5,25 +5,20 @@ const path = require("path")
 const fileUpload = require('express-fileupload');
 const port = process.env.PORT || 1000
 
-require("./database/conn");
+require("./source/database/conn");
 
 app.use(cors({origin: "*"}));
 
 app.use(fileUpload());
 
-app.use("/shop", express.static(path.join(__dirname, 'uploads')));
+app.use("/shop", express.static(path.join(__dirname, './source/uploads')));
 
 
-app.use("/", require("./endpoints/checkout"))
+app.use("/", require("./source/endpoints/checkout"))
 
 app.use(express.json());
 
-app.use("/shop", require("./endpoints/endpoints"))
-
-app.get("/", (req, res) => {
-   res.send("Express on Vercel");
- });
- 
+app.use("/shop", require("./source/endpoints/endpoints"))
 
 const start = async()=>{
    try {
@@ -38,5 +33,3 @@ const start = async()=>{
 }
 
 start();
-
-module.exports = app;
