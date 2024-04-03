@@ -20,6 +20,11 @@ app.use(express.json());
 
 app.use("/shop", require("./endpoints/endpoints"))
 
+app.get("/", (req, res) => {
+   res.send("Express on Vercel");
+ });
+ 
+
 const start = async()=>{
    try {
       
@@ -33,3 +38,5 @@ const start = async()=>{
 }
 
 start();
+
+module.exports = app;
