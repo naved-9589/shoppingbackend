@@ -16,7 +16,7 @@ const stripe = require('stripe')('sk_test_51Out25SCexRHalt0T5AZA8GsUEeZvneJGrwEX
 // stripe payment
 
 
-const YOUR_DOMAIN = 'http://localhost:5173';
+const YOUR_DOMAIN = process.env.FRONT_UR;
 
 route.post('/create-checkout-session', auth, async (req, res) => {
 
